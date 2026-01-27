@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue';
 import { usePrefixClass, useTNodeJSX } from '@tdesign/shared-hooks';
-import { Button, Space, Tooltip } from 'tdesign-vue-next';
-import { useConfig } from 'tdesign-vue-next/es/config-provider/hooks';
+import { Button, Space, Tooltip } from 'tdesign-vue';
+import { useConfig } from 'tdesign-vue/es/hooks/useConfig';
 import {
   ThumbUpIcon,
   ThumbUpFilledIcon,
@@ -9,7 +9,7 @@ import {
   ThumbDownFilledIcon,
   RefreshIcon,
   CopyIcon,
-} from 'tdesign-icons-vue-next';
+} from 'tdesign-icons-vue';
 // TODO: need refactor packages/components/typography/utils/copy-to-clipboard/index.ts???
 import Clipboard from 'clipboard';
 import props from './chat-action-props';
@@ -23,7 +23,7 @@ export default defineComponent({
     const COMPONENT_NAME = usePrefixClass('chat');
     const renderTNodeJSX = useTNodeJSX();
     const messagePluginInstance = MessagePluginSingleton.getInstance();
-    const { globalConfig } = useConfig('chat');
+    const { globalConfig } = useConfig('chat' as any);
 
     return () => {
       // textLoading更新后要传给子组件和孙组件

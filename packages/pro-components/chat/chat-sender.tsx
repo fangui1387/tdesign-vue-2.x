@@ -1,7 +1,7 @@
-import { defineComponent, ref, computed, toRefs, reactive, Fragment } from 'vue';
-import { SendFilledIcon, FileAttachmentIcon, ImageIcon } from 'tdesign-icons-vue-next';
-import { Button, Textarea, Tooltip } from 'tdesign-vue-next';
-import { useConfig } from 'tdesign-vue-next/es/config-provider/hooks';
+import { defineComponent, ref, computed, toRefs, reactive } from 'vue';
+import { SendFilledIcon, FileAttachmentIcon, ImageIcon } from 'tdesign-icons-vue';
+import { Button, Textarea, Tooltip } from 'tdesign-vue';
+import { useConfig } from 'tdesign-vue/es/hooks/useConfig';
 import { usePrefixClass, useTNodeJSX, useVModel } from '@tdesign/shared-hooks';
 import props from './chat-sender-props';
 
@@ -15,7 +15,7 @@ export default defineComponent({
     let isComposition = false;
     const senderTextarea = ref(null);
     const COMPONENT_NAME = usePrefixClass('chat');
-    const { globalConfig } = useConfig('chat');
+    const { globalConfig } = useConfig('chat' as any);
     const { value, modelValue } = toRefs(props);
     const [textValue, setInnerValue] = useVModel(value, modelValue, props.defaultValue, props.onChange);
 
@@ -103,7 +103,7 @@ export default defineComponent({
       const { uploadAttachmentText, uploadImageText } = globalConfig.value;
       const uploadAttachment = actions.find((item) => item.name === 'uploadAttachment');
       const uploadAttachmentButton = uploadAttachment ? (
-        <Fragment>
+        <template>
           <input
             {...uploadAttachment.uploadProps}
             ref={uploadFileRef}
@@ -130,12 +130,12 @@ export default defineComponent({
               <FileAttachmentIcon />
             </Button>
           </Tooltip>
-        </Fragment>
+        </template>
       ) : null;
 
       const uploadImage = actions.find((item) => item.name === 'uploadImage');
       const renderUploadImageButton = uploadImage ? (
-        <Fragment>
+        <template>
           <input
             {...uploadImage.uploadProps}
             ref={uploadImageRef}
@@ -162,7 +162,7 @@ export default defineComponent({
               <ImageIcon />
             </Button>
           </Tooltip>
-        </Fragment>
+        </template>
       ) : null;
       const buttonComponents = {
         uploadAttachment: uploadAttachmentButton,
@@ -170,7 +170,7 @@ export default defineComponent({
       };
 
       return (
-        <Fragment>
+        <template>
           {actions
             .filter(
               (item): item is { name: UploadActionType; action: () => void } =>
@@ -196,7 +196,7 @@ export default defineComponent({
               <div class={`${COMPONENT_NAME.value}-sender__button__stopicon`} />
             </Button>
           )}
-        </Fragment>
+        </template>
       );
       // }
     };

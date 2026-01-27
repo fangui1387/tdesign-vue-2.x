@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "lib": [ "esnext", "dom", "dom.iterable", "scripthost"],
+    "jsx": "preserve",
+    "module": "esnext",
+    "rootDir": ".",
+    "moduleResolution": "bundler",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "types": ["vitest/globals", "lodash"],
+    "allowJs": true,
+    "declaration": true,
+    "outDir": "./vue-next-chat",
+    "removeComments": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": false,
+    "skipLibCheck": true,
+    "paths": {
+      "@src/*": [ "packages/components/*" ],
+      "tdesign-vue-next": [ "packages/components" ],
+      "tdesign-vue-next/es/locale/*": [ "packages/components/locale/*" ],
+      "tdesign-vue-next/es/config-provider/hooks": [ "packages/components/config-provider/hooks" ],
+      "@tdesign-vue-next/chat": [ "packages/pro-components/chat" ],
+      "@common/*": [ "packages/common/*" ],
+      "@test/utils": [ "test/utils" ]
+    }
+  },
+  "include": [
+    "packages/pro-components/chat/**/*.ts",
+    "packages/pro-components/chat/**/*.tsx",
+    "packages/pro-components/chat/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "lib",
+    "cjs",
+    "esm",
+    "es",
+    "global.d.ts"
+  ]
+}

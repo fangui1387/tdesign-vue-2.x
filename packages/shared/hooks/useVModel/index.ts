@@ -4,12 +4,12 @@ import { kebabCase } from 'lodash-es';
 export type ChangeHandler<T, P extends any[]> = (value: T, ...args: P) => void;
 
 export function useVModel<T, P extends any[]>(
-  value: Ref<T>,
-  modelValue: Ref<T>,
+  value: Ref<T> | any,
+  modelValue: Ref<T> | any,
   defaultValue: T,
   onChange: ChangeHandler<T, P>,
   propName = 'value',
-): [Ref<T>, ChangeHandler<T, P>] {
+): [Ref<T> | any, ChangeHandler<T, P>] {
   const { emit, vnode } = getCurrentInstance();
   const internalValue: Ref<T> = ref();
 

@@ -52,7 +52,7 @@ This is [an example](http://example.com/ "Title") inline link.
 
 
 \`\`\`bash
-$ npm i tdesign-vue-next
+$ npm i tdesign-vue
 \`\`\`
 
 ---

@@ -10,7 +10,7 @@ if (
   typeof window !== 'undefined'
 ) {
   // eslint-disable-next-line no-console
-  console.warn('You are using a whole package of @tdesign-vue-next/chat!');
+  console.warn('You are using a whole package of @tdesign-vue/chat!');
 }
 
 export * from './index';

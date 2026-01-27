@@ -1,9 +1,9 @@
 import { defineComponent, computed, provide, ref } from 'vue';
-import { ClearIcon } from 'tdesign-icons-vue-next';
-import { useConfig } from 'tdesign-vue-next/es/config-provider/hooks';
+import { ClearIcon } from 'tdesign-icons-vue';
+import { useConfig } from 'tdesign-vue/es/hooks/useConfig';
 import { isArray } from 'lodash-es';
 import props from './props';
-import { Divider, Popconfirm } from 'tdesign-vue-next';
+import { Divider, Popconfirm } from 'tdesign-vue';
 import { usePrefixClass, useTNodeJSX } from '@tdesign/shared-hooks';
 import ChatItem from './chat-item';
 import { TdChatItemProps, ScrollToBottomParams } from './type';
@@ -44,7 +44,7 @@ export default defineComponent({
   emits: ['clear', 'scroll'],
   setup(props, { emit, expose, slots }) {
     const COMPONENT_NAME = usePrefixClass('chat');
-    const { globalConfig } = useConfig('chat');
+    const { globalConfig } = useConfig('chat' as any);
     const renderTNodeJSX = useTNodeJSX();
     provide('textLoading', props.textLoading);
     provide('animation', props.animation);
@@ -145,7 +145,7 @@ export default defineComponent({
     // 倒序渲染不影响清空历史的位置
     return () => (
       <div class={classes.value}>
-        <div class={listClasses.value} ref={chatBoxRef} onScroll={handleScroll}>
+        <div class={listClasses.value} ref={chatBoxRef as any} onScroll={handleScroll}>
           {props.reverse && <div class="place-holder"></div>}
           {props.reverse && props.clearHistory && renderTNodeJSX('clearHistory', defaultClearHistory)}
           {renderBody()}

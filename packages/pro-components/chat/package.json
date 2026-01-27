@@ -7,12 +7,12 @@
   "dependencies": {
     "clipboard": "catalog:deps",
     "lodash-es": "catalog:deps",
-    "tdesign-icons-vue-next": "catalog:tdesign"
+    "tdesign-icons-vue": "catalog:tdesign"
   },
   "devDependencies": {
     "@types/lodash-es": "catalog:types"
   },
   "peerDependencies": {
-    "vue": ">=3.1.0"
+    "vue": "^2.7.16"
   }
 }

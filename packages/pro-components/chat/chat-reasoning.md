@@ -8,8 +8,8 @@
 -- | -- | -- | -- | --
 collapsed | Boolean | false | 是否折叠。支持语法糖 v-model:collapsed | N
 defaultCollapsed | Boolean | false | 是否折叠。非受控属性 | N
-collapsePanelProps | Object | - | 透传给 CollapsePanel 组件的全部属性。TS 类型：`CollapsePanelProps`，[Collapse API Documents](./collapse?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/packages/pro-components/chat/type.ts) | N
-expandIcon | Slot / Function | - | 当前折叠面板展开图标。优先级低于collapsePanelProps.expandIcon。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/packages/components/common.ts) | N
+collapsePanelProps | Object | - | 透传给 CollapsePanel 组件的全部属性。TS 类型：`CollapsePanelProps`，[Collapse API Documents](./collapse?tab=api)。[详细类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/packages/pro-components/chat/type.ts) | N
+expandIcon | Slot / Function | - | 当前折叠面板展开图标。优先级低于collapsePanelProps.expandIcon。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue/blob/develop/packages/components/common.ts) | N
 expandIconPlacement | String | right | 展开图标位置，可选项：left/right。可选项：left/right | N
 header | Slot / Function | - | 折叠面板头内容。优先级低于collapsePanelProps.header。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/packages/components/common.ts) | N
 headerRightContent | Slot / Function | - | 折叠面板尾内容。优先级低于collapsePanelProps.headerRightContent。TS 类型：`TNode`。[通用类型定义](https://github.com/Tencent/tdesign-vue-next/blob/develop/packages/components/common.ts) | N

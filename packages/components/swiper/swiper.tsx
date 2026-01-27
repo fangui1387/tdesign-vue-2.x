@@ -1,4 +1,4 @@
-import { cloneVNode, computed, defineComponent, isVNode, onMounted, ref, watch } from 'vue';
+import { cloneVNode, computed, defineComponent, isVNode, onMounted, ref, VNode, watch } from 'vue';
 import { ChevronLeftIcon as TdChevronLeftIcon, ChevronRightIcon as TdChevronRightIcon } from 'tdesign-icons-vue-next';
 
 import {
@@ -107,7 +107,7 @@ export default defineComponent({
     const swiperItems = () => {
       const swiperItemList = getChildComponentByName('SwiperItem');
       swiperItemLength.value = swiperItemList.length;
-      const items = swiperItemList.map((swiperItem: any, index) => {
+      const items: VNode[] = swiperItemList.map((swiperItem: any, index) => {
         const p = { ...props, ...swiperItem.props };
         return (
           <TSwiperItem

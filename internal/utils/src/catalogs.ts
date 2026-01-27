@@ -60,8 +60,8 @@ export const catalogs = {
     sortablejs: '^1.15.0',
     tinycolor2: '^1.6.0',
     validator: '^13.15.23',
-    vue: '^3.3.9',
-    'vue-router': '^4.2.4',
+    vue: '^2.7.16',
+    'vue-router': '^3.6.5',
   },
   docs: {
     'gray-matter': '^4.0.3',
@@ -92,6 +92,8 @@ export const catalogs = {
     '@tdesign/site-components': '^0.17.5',
     '@tdesign/theme-generator': '^1.2.0',
     'tdesign-icons-vue-next': '~0.4.2',
+    'tdesign-icons-vue': '~0.4.2',
+    'tdesign-vue': '^1.9.0',
     'tdesign-publish-cli': '^0.0.12',
   },
   test: {

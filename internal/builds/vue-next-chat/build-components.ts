@@ -30,7 +30,7 @@ import {
 } from '@tdesign/internal-utils';
 
 const name = '@tdesign-vue-next/chat';
-const esExternalDeps = Object.keys(pkg.dependencies || {}).concat('tdesign-vue-next/es/config-provider/hooks');
+const esExternalDeps = Object.keys(pkg.dependencies || {}).concat('tdesign-vue/es/hooks/useConfig');
 const externalDeps = [...esExternalDeps, /@babel\/runtime/];
 const externalPeerDeps = Object.keys(pkg.peerDependencies || {});
 const DEFAULT_EXTENSIONS = ['.js', '.jsx', '.es6', '.es', '.mjs', '.cjs'];
@@ -65,6 +65,9 @@ const getPlugins = ({
   isProd?: boolean;
 } = {}) => {
   const plugins = [
+    ignoreImport({
+      include: [/node_modules.*\.css$/, /node_modules.*\.scss$/, /node_modules.*\.less$/],
+    }),
     nodeResolve({
       extensions: ['.mjs', '.js', '.json', '.node', '.ts', '.tsx'],
     }) as unknown as Plugin,

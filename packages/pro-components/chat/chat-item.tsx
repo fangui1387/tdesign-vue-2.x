@@ -1,13 +1,13 @@
-import { defineComponent, computed, provide, Fragment } from 'vue';
-import { useConfig } from 'tdesign-vue-next/es/config-provider/hooks';
+import { defineComponent, computed, provide } from 'vue';
+import { useConfig } from 'tdesign-vue/es/hooks/useConfig';
 
 import { usePrefixClass, useTNodeJSX } from '@tdesign/shared-hooks';
 
 import props from './chat-item-props';
 import { isString, isObject } from 'lodash-es';
-import { Skeleton } from 'tdesign-vue-next';
+import { Skeleton } from 'tdesign-vue';
 import Text from './chat-content';
-import { CheckCircleIcon } from 'tdesign-icons-vue-next';
+import { CheckCircleIcon } from 'tdesign-icons-vue';
 import ChatLoading from './chat-loading';
 import ChatReasoning from './chat-reasoning';
 
@@ -23,7 +23,7 @@ export default defineComponent({
   emits: ['operation'],
   setup(props) {
     const COMPONENT_NAME = usePrefixClass('chat');
-    const { globalConfig } = useConfig('chat');
+    const { globalConfig } = useConfig('chat' as any);
     const renderTNodeJSX = useTNodeJSX();
     const role = computed(() => renderTNodeJSX('role'));
     const variant = computed(() => renderTNodeJSX('variant'));
@@ -80,7 +80,7 @@ export default defineComponent({
         );
       };
       const contentDom = (
-        <Fragment>
+        <template>
           {role.value !== 'model-change' && avatarDom}
           <div class={contentClasses.value}>
             {role.value !== 'model-change' && nameDatetimeDom}
@@ -120,7 +120,7 @@ export default defineComponent({
               <div class={`${COMPONENT_NAME.value}__actions-margin`}>{renderTNodeJSX('actions')}</div>
             )}
           </div>
-        </Fragment>
+        </template>
       );
       return (
         <div

@@ -4,10 +4,10 @@
  * 该文件为脚本自动生成文件，请勿随意修改。如需修改请联系 PMC
  * */
 
-import { AvatarProps } from 'tdesign-vue-next';
-import { TextareaProps } from 'tdesign-vue-next';
-import { CollapsePanelProps } from 'tdesign-vue-next';
-import { TNode } from 'tdesign-vue-next';
+import { AvatarProps } from 'tdesign-vue';
+import { TextareaProps } from 'tdesign-vue';
+import { TdCollapsePanelProps } from 'tdesign-vue';
+import { TNode } from 'tdesign-vue';
 
 export interface TdChatProps {
   /**
@@ -331,7 +331,7 @@ export interface TdChatReasoningProps {
   /**
    * 透传给 CollapsePanel 组件的全部属性
    */
-  collapsePanelProps?: CollapsePanelProps;
+  collapsePanelProps?: TdCollapsePanelProps;
   /**
    * 当前折叠面板展开图标。优先级低于collapsePanelProps.expandIcon
    */

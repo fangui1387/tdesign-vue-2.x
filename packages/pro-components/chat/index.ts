@@ -1,5 +1,3 @@
-import { App } from 'vue';
-
 import _Chat from './chat';
 import _ChatItem from './chat-item';
 import _ChatInput from './chat-input';
@@ -47,7 +45,7 @@ export const ChatLoading = withInstall(_ChatLoading);
 
 export default {
   // TODO: refactor
-  install(app: App, config?: Record<string, unknown>) {
+  install(app: any, config?: Record<string, unknown>) {
     app.use(Chat, config);
     app.use(ChatItem, config);
     app.use(ChatInput, config);

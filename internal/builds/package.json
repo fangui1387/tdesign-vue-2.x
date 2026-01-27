@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build:vue-next": "cross-env NODE_ENV=production tsx ./vue-next/index.ts",
-    "build:chat": "cross-env NODE_ENV=production tsx ./vue-next-chat/index.ts"
+    "build:chat": "cross-env NODE_ENV=production NODE_OPTIONS=--max-old-space-size=8192 tsx ./vue-next-chat/index.ts"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "catalog:bundle",

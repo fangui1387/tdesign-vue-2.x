@@ -32,3 +32,6 @@ robotMsg.json
 
 # TypeScript declaration files
 *.d.ts
+
+# td-chat package
+packages/td-chat/
